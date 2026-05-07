@@ -24,8 +24,14 @@ bridge this gap and will give myself more time to work on this project and test 
 
 ---
 
-## Entry 2 – [Date]: [Short description]
+## Entry 2 – [5/7/2026]: [Part 2]
 
+_Completed all of Part 2. Implemented and did testing for my solutions for select_sources(), run_dijkstra() and precompute_distances().
+Answered related questions in the README_
+
+---
+
+## Entry 3 – [Date]: [Short description]
 > Required. At least one entry must describe a bug, wrong assumption, or design change
 > you encountered. Describe what went wrong and how you resolved it.
 
@@ -33,7 +39,8 @@ _Your entry here._
 
 ---
 
-## Entry 3 – [Date]: [Short description]
+
+## Entry 3 – [Date]: [Short description] [BLANK ENTRY -- copy as needed]
 
 _Your entry here._
 
@@ -53,13 +60,13 @@ _Your entry here._
 > Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
 
 | Part | Estimated Hours |
-|---|-----------------|
-| Part 1: Problem Analysis | 30 minutes      |
-| Part 2: Precomputation Design |                 |
-| Part 3: Algorithm Correctness |                 |
-| Part 4: Search Design |                 |
-| Part 5: State and Search Space |                 |
-| Part 6: Pruning |                 |
-| Part 7: Implementation |                 |
-| README and DEVLOG writing |                 |
-| **Total** |                 |
+|---|----------------|
+| Part 1: Problem Analysis | 0.5            |
+| Part 2: Precomputation Design | 1.5            |
+| Part 3: Algorithm Correctness |                |
+| Part 4: Search Design |                |
+| Part 5: State and Search Space |                |
+| Part 6: Pruning |                |
+| Part 7: Implementation |                |
+| README and DEVLOG writing |                |
+| **Total** |                |

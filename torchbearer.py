@@ -60,6 +60,18 @@ def select_sources(spawn, relics, exit_node):
 
     TODO
     """
+
+    # create variables to track
+    # using set for search decreases time complexity
+    seen = set()
+    sources = []
+    for node in [spawn] + list(relics) + [exit_node]:
+        if node not in seen:
+            # add node if it is new
+            seen.add(node)
+            sources.append(node)
+    return sources
+
     pass
 
 
@@ -79,6 +91,31 @@ def run_dijkstra(graph, source):
 
     TODO
     """
+    # initialize distances to infinity
+    distance = {node: float('inf') for node in graph}
+
+    # initialize distance to source as 0 b/c it is the starting point
+    distance[source] = 0
+    heap = [(0, source)]
+
+    while heap:
+        # pop the smallest unprocessed node
+        cost, u = heapq.heappop(heap)
+
+        # continue if cheaper path already found
+        if cost > distance[u]:
+            continue
+
+        # explore neighbors
+        for v, w in graph[u]:
+            newCost = cost + w
+            if newCost < distance[v]:
+                # found new cheaper path
+                distance[v] = newCost
+                heapq.heappush(heap, (newCost, v))
+
+    return distance
+
     pass
 
 
@@ -99,6 +136,16 @@ def precompute_distances(graph, spawn, relics, exit_node):
 
     TODO
     """
+    # get the sources and create table to track distances
+    sources = select_sources(spawn, relics, exit_node)
+    distanceTable = {}
+
+    # run dijkstra's algorithm on each source node
+    for source in sources:
+        distanceTable[source] = run_dijkstra(graph, source)
+
+    return distanceTable
+
     pass
 
 
@@ -286,5 +333,32 @@ def _run_tests():
 if __name__ == "__main__":
     description = explain_problem()
     print(description)
+
+    sources = select_sources('S', ['R1', 'R2', 'S'], 'T')
+    print(sources)
+
+    graphTest = {
+        'S': [('B', 1), ('C', 2), ('D', 2)],
+        'B': [('D', 1), ('T', 1)],
+        'C': [('B', 1), ('T', 1)],
+        'D': [('B', 1), ('C', 1)],
+        'T': []
+    }
+
+    graphTest2 = {
+        'S': [('R', 3)],
+        'R': [('T', 2)],
+        'T': []
+    }
+    source = 'S'
+    exitNode = 'T'
+    relics = ['R']
+
+    print(precompute_distances(graphTest2, source, relics, exitNode))
+
+    #print(run_dijkstra(graphTest, source))
+
+
+
 
     #_run_tests()

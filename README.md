@@ -36,31 +36,33 @@ a guaranteed greedy local choice that will find the optimal route._
 
 > List the source node types as a bullet list. For each, one-line reason.
 
-| Source Node Type | Why it is a source |
-|---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| Source Node Type | Why it is a source                                                                                  |
+|------------------|-----------------------------------------------------------------------------------------------------|
+| _spawn_          | _this is the original source point where the torchbearer starts every time_                         |
+| _relic_          | _this room is in the middle of the map and must be, and is a source for the next location traveled_ |
+| _end_            | _the torchbearer must always go to this point at the end_                                           |
 
 ### Part 2b: Distance Storage
 
 > Fill in the table. No prose required.
 
-| Property | Your answer |
-|---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Property | Your answer                                                                            |
+|---|----------------------------------------------------------------------------------------|
+| Data structure name | nested directory                                                                       |
+| What the keys represent | the outer kep represents the source node and the inner key represents the destination  |
+| What the values represent | the values represent the distance (cost) from the source to the destination            |
+| Lookup time complexity | O(1)                                                                                   |
+| Why O(1) lookup is possible | it is possible becuase a set is used, sets use hashing and have a lookop cost of O(1). |
 
 ### Part 2c: Precomputation Complexity
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** _k + 1_
+- **Cost per run:** _O(mlogn)_
+- **Total complexity:** _O((k+1) * mlogn)_
+- **Justification (one line):** _Dijkstra's algorithm runs are independent and the graph is explored fully only once. Multiplying the 
+- number of runs by the total cost per run equals the total complexity, which is O((k+1) * mlogn)._
 
 ---
 
@@ -186,4 +188,5 @@ _Your answer here._
 
 > Bullet list. If none beyond lecture notes, write that.
 
-- _Your references here._
+- _Stack Overflow: (information about sets and arrays) https://stackoverflow.com/questions/72120824/run-time-difference-for-in-searching-through-list-and-set-using-python._
+- _source_
