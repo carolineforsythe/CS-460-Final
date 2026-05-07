@@ -1,7 +1,7 @@
 # Development Log – The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** Caroline Forsythe
+**Student ID:** 827344993
 
 > Instructions: Write at least four dated entries. Required entry types are marked below.
 > Two to five sentences per entry is sufficient. Write entries as you go, not all in one
@@ -10,12 +10,17 @@
 
 ---
 
-## Entry 1 – [Date]: Initial Plan
+## Entry 1 – [5/6/2026]: Initial Plan
 
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
 
-_Your entry here._
+_I plan to go in order of the sections laid out in the ASSIGNMENT.md file. It will help me keep on task
+and complete the assignment in a way that compounds on itself to the final solution. I think starting the project and
+doing the testing will be the harder parts of the assignment because it can be daunting. I also think the data
+structure aspect of this project will be difficult for me because I do not have a great foundation due to my CS 210 
+class being subpar and not fully preparing me for upper division classes. I plan to use resources online to help me
+bridge this gap and will give myself more time to work on this project and test my solution(s)._
 
 ---
 

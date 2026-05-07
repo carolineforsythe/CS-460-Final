@@ -2,8 +2,8 @@
 CS 460 – Algorithms: Final Programming Assignment
 The Torchbearer
 
-Student Name: ___________________________
-Student ID:   ___________________________
+Student Name: Caroline Forsythe
+Student ID:   827344993
 
 INSTRUCTIONS
 ------------
@@ -34,7 +34,11 @@ def explain_problem():
 
     TODO
     """
-    return "TODO"
+    return ("A shortest-path run from S is not enough because it will not reach all of the relics and it is not "
+            "guaranteed to finish at T, both of which are required. Even though it finds the cheapest route, it likely does "
+            "not find the route that fits the requirements within the project. The decision that remains is the order in which "
+            "the relics should be visited before reaching the end, T. This requires search over orders because there are k! sequences "
+            "in which the relics can be visited in and there isn't a guaranteed greedy local choice that will find the optimal route..")
 
 
 # =============================================================================
@@ -280,4 +284,7 @@ def _run_tests():
 
 
 if __name__ == "__main__":
-    _run_tests()
+    description = explain_problem()
+    print(description)
+
+    #_run_tests()

@@ -1,7 +1,7 @@
 # The Torchbearer
 
-**Student Name:** ___________________________
-**Student ID:** ___________________________
+**Student Name:** Caroline Forsythe
+**Student ID:** 827344993
 **Course:** CS 460 – Algorithms | Spring 2026
 
 > This README is your project documentation. Write it the way a developer would document
@@ -17,13 +17,16 @@
 > per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+  _A shortest-path run from S is not enough because it will not reach all of the relics and it is not 
+ guaranteed to finish at T, both of which are required. Even though it finds the cheapest route, it likely does
+not find the route that fits the requirements within the project._
 
 - **What decision remains after all inter-location costs are known:**
-  _Your answer here._
+  _The decision that remains is the order in which the relics should be visited before reaching the end, T._
 
 - **Why this requires a search over orders (one sentence):**
-  _Your answer here._
+  _This requires search over orders because there are k! sequences in which the relics can be visited in and there isn't 
+a guaranteed greedy local choice that will find the optimal route._
 
 ---
 
