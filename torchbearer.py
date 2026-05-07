@@ -38,7 +38,7 @@ def explain_problem():
             "guaranteed to finish at T, both of which are required. Even though it finds the cheapest route, it likely does "
             "not find the route that fits the requirements within the project. The decision that remains is the order in which "
             "the relics should be visited before reaching the end, T. This requires search over orders because there are k! sequences "
-            "in which the relics can be visited in and there isn't a guaranteed greedy local choice that will find the optimal route..")
+            "in which the relics can be visited in and there isn't a guaranteed greedy local choice that will find the optimal route.")
 
 
 # =============================================================================
