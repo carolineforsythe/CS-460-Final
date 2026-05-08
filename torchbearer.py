@@ -35,10 +35,11 @@ def explain_problem():
     TODO
     """
     return ("A shortest-path run from S is not enough because it will not reach all of the relics and it is not "
-            "guaranteed to finish at T, both of which are required. Even though it finds the cheapest route, it likely does "
-            "not find the route that fits the requirements within the project. The decision that remains is the order in which "
-            "the relics should be visited before reaching the end, T. This requires search over orders because there are k! sequences "
-            "in which the relics can be visited in and there isn't a guaranteed greedy local choice that will find the optimal route.")
+            "guaranteed to finish at T, both of which are required. Even though it finds the cheapest route, it likely "
+            "does not find the route that fits the requirements within the project. The decision that remains is the "
+            "order in which the relics should be visited before reaching the end, T. This requires search over orders "
+            "because there are k! sequences in which the relics can be visited in and there isn't a guaranteed greedy "
+            "local choice that will find the optimal route.")
 
 
 # =============================================================================
@@ -65,7 +66,7 @@ def select_sources(spawn, relics, exit_node):
     # using set for search decreases time complexity
     seen = set()
     sources = []
-    for node in [spawn] + list(relics) + [exit_node]:
+    for node in [spawn] + list(relics):
         if node not in seen:
             # add node if it is new
             seen.add(node)
@@ -163,7 +164,20 @@ def dijkstra_invariant_check():
 
     TODO
     """
-    return "TODO"
+    return ("Because S only holds the guaranteed smallest distances, any dist[v] in S will be the most optimal path. No "
+            "later discovered path can be better. dist[u] holds the shortest path found so far for nodes not yet "
+            "finalized, and updates if path is found that is shorter than what is currently stored in dist[u]. It only "
+            "considers routes that pass through nodes in the finalized set S. At initialization, the only known node is "
+            "the source node and the distance cost is 0, because it is the current location of the torchbearer. All "
+            "other nodes are set to inf() because paths to them have not been explored yet. Thus, the invariant holds at "
+            "initialization. The algorithm always picks the non-finalized node with the shortest distance in dist[u]. "
+            "Due to the fact that there are no negative edge weights (edge weights only go from 0-infinity), any "
+            "alternative path will be equal to or greater than the one stored in dist[u]. This means that the distance "
+            "is optimal, and finalizing the node holds the invariant. When the heap is empty, all reachable nodes have "
+            "been added to S, and dist[v] holds the actual shortest path for every node. Unreachable remain set to inf() "
+            "The invariant holds. Connecting correct distances leads to correct routing decisions because it ensures "
+            "that the path taken by the torchbearer is the shortest, lowest cost option that avoids wasting fuel, taking "
+            "long paths, and possibly getting stuck in a dead end (because the paths are directed).")
 
 
 # =============================================================================
@@ -331,12 +345,15 @@ def _run_tests():
 
 
 if __name__ == "__main__":
+    # make sure explain_problem() prints and is passed thru properly
     description = explain_problem()
     print(description)
 
+    # test select_sources()
     sources = select_sources('S', ['R1', 'R2', 'S'], 'T')
     print(sources)
 
+    # copied graphs for testing
     graphTest = {
         'S': [('B', 1), ('C', 2), ('D', 2)],
         'B': [('D', 1), ('T', 1)],
@@ -344,7 +361,6 @@ if __name__ == "__main__":
         'D': [('B', 1), ('C', 1)],
         'T': []
     }
-
     graphTest2 = {
         'S': [('R', 3)],
         'R': [('T', 2)],
@@ -352,11 +368,16 @@ if __name__ == "__main__":
     }
     source = 'S'
     exitNode = 'T'
-    relics = ['R']
+    relics = ['B', 'C', 'D']
 
-    print(precompute_distances(graphTest2, source, relics, exitNode))
+    #test run_dijkstra()
+    print(run_dijkstra(graphTest, source))
 
-    #print(run_dijkstra(graphTest, source))
+    # test precompute_distances()
+    print(precompute_distances(graphTest, source, relics, exitNode))
+
+    # make sure dijkstra_invariant_check() prints and is passed thru properly
+    print(dijkstra_invariant_check())
 
 
 

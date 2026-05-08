@@ -26,14 +26,20 @@ bridge this gap and will give myself more time to work on this project and test 
 
 ## Entry 2 – [5/7/2026]: [Part 2]
 
-_Completed all of Part 2. Implemented and did testing for my solutions for select_sources(), run_dijkstra() and precompute_distances().
-Answered related questions in the README_
+_Completed all of Part 2. Implemented and did testing for my solutions for select_sources(), run_dijkstra() and 
+precompute_distances(). Answered related questions in the README._
 
 ---
 
-## Entry 3 – [Date]: [Short description]
-> Required. At least one entry must describe a bug, wrong assumption, or design change
-> you encountered. Describe what went wrong and how you resolved it.
+## Entry 3 – [5/8/2026]: [Fix Part 2, Part 3]
+
+_In Part 2, I had the end, T as a source point. This was incorrect because nothing moves on from that point, the 
+torchbearer stays stationary and ends there. I edited my graph in README.md and my code in select_sources() to reflect 
+this. All questions from Part 3 have been answered in README.md and implemented into torchbearer.py_
+
+---
+## Entry 4 – [Date]: [Short description]
+
 
 _Your entry here._
 
@@ -60,13 +66,13 @@ _Your entry here._
 > Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
 
 | Part | Estimated Hours |
-|---|----------------|
-| Part 1: Problem Analysis | 0.5            |
-| Part 2: Precomputation Design | 1.5            |
-| Part 3: Algorithm Correctness |                |
-| Part 4: Search Design |                |
-| Part 5: State and Search Space |                |
-| Part 6: Pruning |                |
-| Part 7: Implementation |                |
-| README and DEVLOG writing |                |
-| **Total** |                |
+|---|-----------------|
+| Part 1: Problem Analysis | 0.5             |
+| Part 2: Precomputation Design | 1.5             |
+| Part 3: Algorithm Correctness | 0.75            |
+| Part 4: Search Design |                 |
+| Part 5: State and Search Space |                 |
+| Part 6: Pruning |                 |
+| Part 7: Implementation |                 |
+| README and DEVLOG writing |                 |
+| **Total** |                 |
