@@ -194,7 +194,15 @@ def explain_search():
 
     TODO
     """
-    return "TODO"
+    return ("A greedy solution always chooses the shortest immediate path, ignoring how that affects the overall route "
+            "cost. We will use the concrete illustration provided earlier in the document for a counterexample. There "
+            "are two possible 'optimal' routes to choose from, one results in a total cost of 4 and the other has a "
+            "total cost of 5. The greedy solution selects S -> B -> D -> C -> T, with a total cost of 4. It starts by "
+            "choosing B from S because S -> B = 1 and S -> C = 2. S -> B is the more optimal local solution. The optimal "
+            "solution picks S -> B -> D -> C -> T, with a total cost of 4. Greedy choices can lead to costly future "
+            "decisions because the locally cheap option might not be a part of the locally optimal solution. The "
+            "algorithm must explore every possible order in which the relics can be visited by the torchbearer to "
+            "determine the most optimal path.")
 
 
 # =============================================================================
@@ -378,6 +386,9 @@ if __name__ == "__main__":
 
     # make sure dijkstra_invariant_check() prints and is passed thru properly
     print(dijkstra_invariant_check())
+
+    # make sure explain_search() prints and is passed thru properly
+    print(explain_search())
 
 
 

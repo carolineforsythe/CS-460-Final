@@ -60,8 +60,8 @@ a guaranteed greedy local choice that will find the optimal route._
 - **Number of Dijkstra runs:** _k + 1_
 - **Cost per run:** _O(mlogn)_
 - **Total complexity:** _O((k+1) * mlogn)_
-- **Justification (one line):** _Dijkstra's algorithm runs are independent and the graph is explored fully only once. Multiplying the 
-number of runs by the total cost per run equals the total complexity, which is O((k+1) * mlogn)._
+- **Justification (one line):** _Dijkstra's algorithm runs are independent and the graph is explored fully only once. 
+Multiplying the number of runs by the total cost per run equals the total complexity, which is O((k+1) * mlogn)._
 
 ---
 
@@ -80,20 +80,22 @@ number of runs by the total cost per run equals the total complexity, which is O
 discovered path can be better._
 
 - **For nodes not yet finalized (not in S):**
-  _dist[u] holds the shortest path found so far for nodes not yet finalized, and updates if path is found that is shorter than what is currently stored in dist[u].
-It only considers routes that pass through nodes in the finalized set S.
+  _dist[u] holds the shortest path found so far for nodes not yet finalized, and updates if path is found that is 
+shorter than what is currently stored in dist[u]. It only considers routes that pass through nodes in the finalized set S.
 
 ### Part 3b: Why Each Phase Holds
 
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _At initialization, the only known node is the source node and the distance cost is 0, because it is the current location of the torchbearer. All other nodes are 
-set to inf() because paths to them have not been explored yet. Thus, the invariant holds at initialization._
+  _At initialization, the only known node is the source node and the distance cost is 0, because it is the current 
+location of the torchbearer. All other nodes are set to inf() because paths to them have not been explored yet. Thus, 
+the invariant holds at initialization._
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _The algorithm always picks the non-finalized node with the shortest distance in dist[u]. Due to the fact that there are no negative edge weights (edge weights only 
-go from 0-infinity), any alternative path will be equal to or greater than the one stored in dist[u]. This means that the distance is optimal, and finalizing the node holds the invariant._
+  _The algorithm always picks the non-finalized node with the shortest distance in dist[u]. Due to the fact that there 
+are no negative edge weights (edge weights only go from 0-infinity), any alternative path will be equal to or greater 
+than the one stored in dist[u]. This means that the distance is optimal, and finalizing the node holds the invariant._
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
   _When the heap is empty, all reachable nodes have been added to S, and dist[v] holds the actual shortest path for every 
@@ -103,29 +105,36 @@ node. Unreachable remain set to inf() The invariant holds._
 
 > One sentence connecting correct distances to correct routing decisions.
 
-_Connecting correct distances leads to correct routing decisions because it ensures that the path taken by the torchbearer is the shortest, lowest cost option that avoids wasting fuel, taking 
-long paths, and possibly getting stuck in a dead end (because the paths are directed)._
+_Connecting correct distances leads to correct routing decisions because it ensures that the path taken by the torchbearer 
+is the shortest, lowest cost option that avoids wasting fuel, taking long paths, and possibly getting stuck in a dead end 
+(because the paths are directed)._
 
 ---
 
-## Part 4: Search Design
+## Part 4: Search Design-
 
 ### Why Greedy Fails
 
 > State the failure mode. Then give a concrete counter-example using specific node names
 > or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** _A greedy solution always chooses the shortest immediate path, ignoring how that affects the 
+overall route cost.
+- **Counter-example setup:** _We will use the concrete illustration provided earlier in the document for a counterexample.
+There are two possible 'optimal' routes to choose from, one results in a total cost of 4 and the other has a total cost 
+of 5._
+- **What greedy picks:** _The greedy solution selects S -> B -> D -> C -> T, with a total cost of 4. It starts by 
+choosing B from S because S -> B = 1 and S -> C = 2. S -> B is the more optimal local solution._
+- **What optimal picks:** _The optimal solution picks S -> B -> D -> C -> T, with a total cost of 4._
+- **Why greedy loses:** _Greedy choices can lead to costly future decisions because the locally cheap option might not be
+a part of the locally optimal solution._
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- _The algorithm must explore every possible order in which the relics can be visited by the torchbearer to determine 
+the most optimal path._
 
 ---
 
@@ -196,4 +205,5 @@ long paths, and possibly getting stuck in a dead end (because the paths are dire
 - _Lecture notes_
 - _Stack Overflow: (information about sets and arrays) https://stackoverflow.com/questions/72120824/run-time-difference-for-in-searching-through-list-and-set-using-python._
 - _Geeks for Geeks: (dijkstra's algorithm information) https://www.geeksforgeeks.org/dsa/dijkstras-shortest-path-algorithm-greedy-algo-7/_
+- _University of Illinois: (inductive proof information) https://jeffe.cs.illinois.edu/teaching/algorithms/notes/98-induction.pdf_
 - _source_

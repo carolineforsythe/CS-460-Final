@@ -38,10 +38,10 @@ torchbearer stays stationary and ends there. I edited my graph in README.md and 
 this. All questions from Part 3 have been answered in README.md and implemented into torchbearer.py_
 
 ---
-## Entry 4 – [Date]: [Short description]
+## Entry 4 – [5/8/2026]: [Part 4]
 
 
-_Your entry here._
+_Completed all of Part 4. All questions have been answered in README.md and implemented into torchbearer.py._
 
 ---
 
