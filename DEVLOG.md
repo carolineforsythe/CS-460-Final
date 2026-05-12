@@ -44,6 +44,14 @@ this. All questions from Part 3 have been answered in README.md and implemented 
 _Completed all of Part 4. All questions have been answered in README.md and implemented into torchbearer.py._
 
 ---
+## Entry 5 – [5/10/2026]: [Part 5]
+
+_Completed all of Part 5. All questions have been answered and the code has been implemented in torchbearer.py. 
+Some grammatical changes were made to previous answers for other sections. Implemented solve() to be able to start
+doing overall testing with all parts combined._
+
+
+---
 
 
 ## Entry 3 – [Date]: [Short description] [BLANK ENTRY -- copy as needed]
@@ -70,8 +78,8 @@ _Your entry here._
 | Part 1: Problem Analysis | 0.5             |
 | Part 2: Precomputation Design | 1.5             |
 | Part 3: Algorithm Correctness | 0.75            |
-| Part 4: Search Design |                 |
-| Part 5: State and Search Space |                 |
+| Part 4: Search Design | 0.5             |
+| Part 5: State and Search Space | 2.5             |
 | Part 6: Pruning |                 |
 | Part 7: Implementation |                 |
 | README and DEVLOG writing |                 |

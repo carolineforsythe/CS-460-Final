@@ -229,6 +229,17 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
 
     TODO
     """
+    # create variables to hold information for _explore
+    relics_remaining = set(relics)
+    relics_visited_order = []
+    best = [float('inf'),[]]
+
+    # call _explore
+    _explore(dist_table, spawn, relics_remaining, relics_visited_order, 0, exit_node, best)
+
+    # return the minimum_fuel_cost and ordered_relic_list
+    return best[0], best[1]
+
     pass
 
 
@@ -261,6 +272,37 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     explaining why it is safe (cannot skip the optimal solution).
     This comment is graded.
     """
+
+    # base case --> no relics left
+    if not relics_remaining:
+        # get final cost
+        final_cost = cost_so_far + dist_table[current_loc][exit_node]
+        # update best cost and relics visited if final cost of the current path is the best
+        # this is a copy of the best order so far, does not get undone by backtracking
+        if final_cost < best[0]:
+            best[0] = final_cost
+            best[1] = list(relics_visited_order)
+            return
+
+    # recursive case
+    # to explore all possible orderings of the relics
+    for relic in list(relics_remaining):
+        # get travel cost and visit the relic
+        travel_cost = dist_table[current_loc][relic]
+        relics_remaining.remove(relic)
+        relics_visited_order.append(relic)
+
+        # call recursive case
+        _explore(dist_table, relic, relics_remaining, relics_visited_order, cost_so_far, exit_node, best)
+
+        # backtracking --> undo after recursive call to move on cleanly to next relic branch
+        relics_remaining.add(relic)
+        relics_visited_order.pop()
+
+
+    # pruning
+
+
     pass
 
 
@@ -285,6 +327,9 @@ def solve(graph, spawn, relics, exit_node):
 
     TODO
     """
+
+    dist_table = precompute_distances(graph, spawn, relics, exit_node)
+    return find_optimal_route(dist_table, spawn, relics, exit_node)
     pass
 
 
@@ -378,7 +423,7 @@ if __name__ == "__main__":
     exitNode = 'T'
     relics = ['B', 'C', 'D']
 
-    #test run_dijkstra()
+    # test run_dijkstra()
     print(run_dijkstra(graphTest, source))
 
     # test precompute_distances()
@@ -392,5 +437,5 @@ if __name__ == "__main__":
 
 
 
-
-    #_run_tests()
+    # test implementation of everything together
+    _run_tests()

@@ -45,13 +45,13 @@ a guaranteed greedy local choice that will find the optimal route._
 
 > Fill in the table. No prose required.
 
-| Property | Your answer                                                                            |
-|---|----------------------------------------------------------------------------------------|
-| Data structure name | nested directory                                                                       |
-| What the keys represent | the outer kep represents the source node and the inner key represents the destination  |
-| What the values represent | the values represent the distance (cost) from the source to the destination            |
-| Lookup time complexity | O(1)                                                                                   |
-| Why O(1) lookup is possible | it is possible becuase a set is used, sets use hashing and have a lookop cost of O(1). |
+| Property | Your answer                                                                                     |
+|---|-------------------------------------------------------------------------------------------------|
+| Data structure name | nested directory                                                                                |
+| What the keys represent | the outer key represents the source node and the inner key represents the destination           |
+| What the values represent | the values represent the distance (cost) from the source to the destination                     |
+| Lookup time complexity | O(1)                                                                                            |
+| Why O(1) lookup is possible | it is possible becuae in python, nested directories use hashing and have a lookop cost of O(1). |
 
 ### Part 2c: Precomputation Complexity
 
@@ -99,7 +99,7 @@ than the one stored in dist[u]. This means that the distance is optimal, and fin
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
   _When the heap is empty, all reachable nodes have been added to S, and dist[v] holds the actual shortest path for every 
-node. Unreachable remain set to inf() The invariant holds._
+node. Unreachable nodes remain set to inf() The invariant holds._
 
 ### Part 3c: Why This Matters for the Route Planner
 
@@ -127,7 +127,7 @@ of 5._
 choosing B from S because S -> B = 1 and S -> C = 2. S -> B is the more optimal local solution._
 - **What optimal picks:** _The optimal solution picks S -> B -> D -> C -> T, with a total cost of 4._
 - **Why greedy loses:** _Greedy choices can lead to costly future decisions because the locally cheap option might not be
-a part of the locally optimal solution._
+a part of the globally optimal solution._
 
 ### What the Algorithm Must Explore
 
@@ -145,30 +145,31 @@ the most optimal path._
 > Document the three components of your search state as a table.
 > Variable names here must match exactly what you use in torchbearer.py.
 
-| Component | Variable name in code | Data type | Description |
-|---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Component | Variable name in code | Data type | Description                                                                                           |
+|---|----------------------|-----------|-------------------------------------------------------------------------------------------------------|
+| Current location | current_loc          | node      | holds the current location of the torchbearer, either the spawn point or the relic it is currently at |
+| Relics already collected | relics_visited_order | list      | the relics the torchbearer has visited so far in order                                                |
+| Fuel cost so far | cost_so_far          | float     | the total fuel burned from the spawn point to the torchbearer's current location                      |
+
 
 ### Part 5b: Data Structure for Visited Relics
 
 > Fill in the table.
 
-| Property | Your answer |
-|---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Property | Your answer                                                                                                                                                                                                  |
+|---|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Data structure chosen | set                                                                                                                                                                                                          |
+| Operation: check if relic already collected | Time complexity: O(1)                                                                                                                                                                                        |
+| Operation: mark a relic as collected | Time complexity: O(1)                                                                                                                                                                                        |
+| Operation: unmark a relic (backtrack) | Time complexity: O(1)                                                                                                                                                                                        |
+| Why this structure fits | sets are mutable, and utilizing backtracking means that quick adding, removal, and search of the structure is important. the mutability saves space and prevents copies from being made every recursive call |
 
 ### Part 5c: Worst-Case Search Space
 
 > Two bullets.
 
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** _k!._
+- **Why:** _Worst case, the algorithm must go through the entire sequence and have to choose between every unvisited relic when choosing the next stop._
 
 ---
 
@@ -206,4 +207,6 @@ the most optimal path._
 - _Stack Overflow: (information about sets and arrays) https://stackoverflow.com/questions/72120824/run-time-difference-for-in-searching-through-list-and-set-using-python._
 - _Geeks for Geeks: (dijkstra's algorithm information) https://www.geeksforgeeks.org/dsa/dijkstras-shortest-path-algorithm-greedy-algo-7/_
 - _University of Illinois: (inductive proof information) https://jeffe.cs.illinois.edu/teaching/algorithms/notes/98-induction.pdf_
+- _Geeks for Geeks: (sets) https://www.geeksforgeeks.org/python/sets-in-python/
+- _Stack Overflow: (time complexities for sets) https://stackoverflow.com/questions/7351459/time-complexity-of-python-set-operations
 - _source_
