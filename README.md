@@ -169,7 +169,8 @@ the most optimal path._
 > Two bullets.
 
 - **Worst-case number of orders considered:** _k!._
-- **Why:** _Worst case, the algorithm must go through the entire sequence and have to choose between every unvisited relic when choosing the next stop._
+- **Why:** _Worst case, the algorithm must go through the entire sequence and have to choose between every unvisited 
+relic when choosing the next stop._
 
 ---
 
@@ -179,23 +180,28 @@ the most optimal path._
 
 > Three bullets.
 
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** _best[0] tracks the lowest total fuel cost of all the valid relic routes._
+- **When it is used:** _It is used at the start of _explore() whenever it is called._
+- **What it allows the algorithm to skip:** _It allows the algorithm to skip any tracing route that is longer than the 
+optimal route stored in best[0]_
 
 ### Part 6b: Lower Bound Estimation
 
 > Three bullets.
 
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** _The current cost so far, which is stored in cost_so_far._
+- **What the lower bound accounts for:** _It accounts for the fuel spent to get to the current location._
+- **Why it never overestimates:** _It never overestimates because it is the shortest path from the current location to 
+the exit. It ignores relics it still needs to visit, so the remaining cost to reach the end must be this value at the 
+very least because there are still locations the torchbearer needs to visit._
 
 ### Part 6c: Pruning Correctness
 
 > One to two bullets. Explain why pruning is safe.
 
-- _Your answer here._
+- _Pruning is safe because if cost_so_far is already greater than or equal to the best route traversed so far, the 
+current cost cannot become cheapest overall route. It is the same or greater cost than the current best but still needs 
+to traverse some relics to reach the end._
 
 ---
 
@@ -207,6 +213,5 @@ the most optimal path._
 - _Stack Overflow: (information about sets and arrays) https://stackoverflow.com/questions/72120824/run-time-difference-for-in-searching-through-list-and-set-using-python._
 - _Geeks for Geeks: (dijkstra's algorithm information) https://www.geeksforgeeks.org/dsa/dijkstras-shortest-path-algorithm-greedy-algo-7/_
 - _University of Illinois: (inductive proof information) https://jeffe.cs.illinois.edu/teaching/algorithms/notes/98-induction.pdf_
-- _Geeks for Geeks: (sets) https://www.geeksforgeeks.org/python/sets-in-python/
+- _Geeks for Geeks: (sets information) https://www.geeksforgeeks.org/python/sets-in-python/
 - _Stack Overflow: (time complexities for sets) https://stackoverflow.com/questions/7351459/time-complexity-of-python-set-operations
-- _source_

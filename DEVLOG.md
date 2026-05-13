@@ -11,7 +11,6 @@
 ---
 
 ## Entry 1 – [5/6/2026]: Initial Plan
-
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
 
@@ -23,14 +22,11 @@ class being subpar and not fully preparing me for upper division classes. I plan
 bridge this gap and will give myself more time to work on this project and test my solution(s)._
 
 ---
-
 ## Entry 2 – [5/7/2026]: [Part 2]
-
 _Completed all of Part 2. Implemented and did testing for my solutions for select_sources(), run_dijkstra() and 
 precompute_distances(). Answered related questions in the README._
 
 ---
-
 ## Entry 3 – [5/8/2026]: [Fix Part 2, Part 3]
 
 _In Part 2, I had the end, T as a source point. This was incorrect because nothing moves on from that point, the 
@@ -39,24 +35,24 @@ this. All questions from Part 3 have been answered in README.md and implemented 
 
 ---
 ## Entry 4 – [5/8/2026]: [Part 4]
-
-
 _Completed all of Part 4. All questions have been answered in README.md and implemented into torchbearer.py._
 
 ---
-## Entry 5 – [5/10/2026]: [Part 5]
+## Entry 5 – [5/11/2026]: [Part 5]
 
 _Completed all of Part 5. All questions have been answered and the code has been implemented in torchbearer.py. 
 Some grammatical changes were made to previous answers for other sections. Implemented solve() to be able to start
 doing overall testing with all parts combined._
-
-
 ---
 
 
-## Entry 3 – [Date]: [Short description] [BLANK ENTRY -- copy as needed]
+## Entry 6 – [Date]: [Part 6, Fix Part 5]
 
-_Your entry here._
+_Completed all of Part 6. All questions have been answered and the code has been implemented in torchbearer.py. I also 
+fixed a key mistake I made in part 5 when passing values in the recursive call in _explore(). When I was passing through 
+the total cost so far, I was only including cost_so_far, and not travel_cost, which is the current location to the next
+relic. This was not giving a fully accurate total distance traveled which caused it to fail test 4. 
+
 
 ---
 
@@ -80,7 +76,7 @@ _Your entry here._
 | Part 3: Algorithm Correctness | 0.75            |
 | Part 4: Search Design | 0.5             |
 | Part 5: State and Search Space | 2.5             |
-| Part 6: Pruning |                 |
+| Part 6: Pruning | 1               |
 | Part 7: Implementation |                 |
 | README and DEVLOG writing |                 |
 | **Total** |                 |

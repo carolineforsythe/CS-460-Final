@@ -273,6 +273,15 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     This comment is graded.
     """
 
+    # pruning
+    # dist_table[current_loc][exit_node] is the shortest distance from the current node to the end point.
+    # If cost_so_far + distance to end node is greater than the current best tracing, which is stored in bext[0], it is
+    # not worth continuing because in the end, it will end up not being used. It is already worse or equal to the best
+    # tracing path and the cost will only increase as the tracing continues, meaning that it will never be the best tracing path.
+
+    if cost_so_far >= best[0]:
+        return
+
     # base case --> no relics left
     if not relics_remaining:
         # get final cost
@@ -293,15 +302,11 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
         relics_visited_order.append(relic)
 
         # call recursive case
-        _explore(dist_table, relic, relics_remaining, relics_visited_order, cost_so_far, exit_node, best)
+        _explore(dist_table, relic, relics_remaining, relics_visited_order, cost_so_far + travel_cost, exit_node, best)
 
         # backtracking --> undo after recursive call to move on cleanly to next relic branch
         relics_remaining.add(relic)
         relics_visited_order.pop()
-
-
-    # pruning
-
 
     pass
 
