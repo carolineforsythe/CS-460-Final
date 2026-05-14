@@ -39,7 +39,7 @@ doing overall testing with all parts combined._
 ---
 
 
-## Entry 6 – [Date]: [Part 6, Fix Part 5]
+## Entry 6 – [5/12/2026]: [Part 6, Fix Part 5]
 
 _Completed all of Part 6. All questions have been answered and the code has been implemented in torchbearer.py. I also 
 fixed a key mistake I made in part 5 when passing values in the recursive call in _explore(). When I was passing through 
@@ -49,7 +49,7 @@ relic. This was not giving a fully accurate total distance traveled which caused
 
 ---
 
-## Final Entry – [5/12/2026]: Time Estimate
+## Final Entry – [5/14/2026]: Time Estimate
 
 
 | Part | Estimated Hours |
