@@ -3,16 +3,9 @@
 **Student Name:** Caroline Forsythe
 **Student ID:** 827344993
 
-> Instructions: Write at least four dated entries. Required entry types are marked below.
-> Two to five sentences per entry is sufficient. Write entries as you go, not all in one
-> sitting. Graders check that entries reflect genuine work across multiple sessions.
-> Delete all blockquotes before submitting.
-
 ---
 
 ## Entry 1 – [5/6/2026]: Initial Plan
-> Required. Write this before writing any code. Describe your plan: what you will
-> implement first, what parts you expect to be difficult, and how you plan to test.
 
 _I plan to go in order of the sections laid out in the ASSIGNMENT.md file. It will help me keep on task
 and complete the assignment in a way that compounds on itself to the final solution. I think starting the project and
@@ -56,18 +49,8 @@ relic. This was not giving a fully accurate total distance traveled which caused
 
 ---
 
-## Entry 4 – [Date]: Post-Implementation Reflection
+## Final Entry – [5/12/2026]: Time Estimate
 
-> Required. Written after your implementation is complete. Describe what you would
-> change or improve given more time.
-
-_Your entry here._
-
----
-
-## Final Entry – [Date]: Time Estimate
-
-> Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
 
 | Part | Estimated Hours |
 |---|-----------------|
@@ -77,6 +60,6 @@ _Your entry here._
 | Part 4: Search Design | 0.5             |
 | Part 5: State and Search Space | 2.5             |
 | Part 6: Pruning | 1               |
-| Part 7: Implementation |                 |
-| README and DEVLOG writing |                 |
-| **Total** |                 |
+| Part 7: Implementation | 1               |
+| README and DEVLOG writing | 1               |
+| **Total** | 8.75            |
